@@ -1,17 +1,9 @@
 import React from "react";
-import {
-    Box,
-    Dialog,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-    IconButton,
-    List,
-    Slide,
-    Typography
-} from "@mui/material";
+import {Box, ButtonGroup, Dialog, DialogContent, DialogTitle, IconButton, Slide, Typography} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import PopUpMenuItem from "./PopUpMenuItem";
+import VoicePlayer from "./VoicePlayer";
+import PopUpButton from "./PopUpButton";
+import DeleteButton from "./DeleteButton";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -22,11 +14,9 @@ function VoiceInfoPopUp({open, setOpen}) {
         setOpen(false);
     }
 
-    return (
-        <Dialog
+    return (<Dialog
             open={open}
             TransitionComponent={Transition}
-            keepMounted
             onClose={handleClose}
             fullScreen
             PaperProps={{
@@ -41,30 +31,24 @@ function VoiceInfoPopUp({open, setOpen}) {
                 },
             }}
         >
-            <DialogTitle>
-                <Box display="flex" justifyContent="space-between" alignItems="center" width="100%" padding={2}>
-                    <Typography variant="h6" color="textSecondary">Tên giọng • SG</Typography>
+            <DialogTitle sx={{backgroundColor: '#F5F7FB', border: '1px solid #cfd0d1', padding: '5px 0 0 0',}}>
+                <Box sx={{padding: '0 10px 0 10px'}} display="flex" justifyContent="space-between" alignItems="center">
+                    <Typography variant="subtitle1" sx={{fontWeight: 'bold'}}>Tên giọng • SG</Typography>
                     <IconButton edge="end" color="inherit" onClick={handleClose} aria-label="close">
-                        <CloseIcon/>
+                        <CloseIcon sx={{backgroundColor: '#cfd0d1', borderRadius: '50%'}}/>
                     </IconButton>
                 </Box>
             </DialogTitle>
+            <VoicePlayer/>
             <DialogContent style={{backdropFilter: 'blur(5px)', padding: '16px'}}>
-                <DialogContentText>
-                    <List>
-                        <PopUpMenuItem name={"Xuất bản"} handleClick={() => {
-                        }}/>
-                        <PopUpMenuItem name={"Sử dụng ngay"} handleClick={() => {
-                        }}/>
-                        <PopUpMenuItem name={"Đổi tên giọng"} handleClick={() => {
-                        }}/>
-                        <PopUpMenuItem name={"Xóa"} handleClick={() => {
-                        }}/>
-                    </List>
-                </DialogContentText>
+                <ButtonGroup orientation={"vertical"} fullWidth>
+                    <PopUpButton text={"Xuất bản"} onClick={() => console.log("Edit")}/>
+                    <PopUpButton text={"Sử dụng ngay"} onClick={() => console.log("Edit")}/>
+                    <PopUpButton text={"Đổi tên giọng"} onClick={() => console.log("Edit")}/>
+                </ButtonGroup>
+                <DeleteButton onClick={() => console.log("Delete")}/>
             </DialogContent>
-        </Dialog>
-    );
+        </Dialog>);
 }
 
 export default VoiceInfoPopUp;

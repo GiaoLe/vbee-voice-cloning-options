@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 
-const YellowPlusButton = () => {
+function AddVoiceButton() {
     return (<Button
         variant="contained"
         sx={{
-            backgroundColor: '#ffff00',
+            backgroundColor: '#FFD60A',
             color: 'black',
             borderRadius: '50%', // Make the button round
             width: '64px', // Set equal width and height
@@ -23,6 +23,6 @@ const YellowPlusButton = () => {
     >
         +
     </Button>);
-};
+}
 
-export default YellowPlusButton;
+export default AddVoiceButton;

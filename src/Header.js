@@ -7,15 +7,16 @@ import Avatar from '@mui/material/Avatar';
 import {ReactComponent as Logo} from './aivoice-cloning-watermark.svg';
 
 
-function MobileHeader() {
+function Header() {
 
-    const handleMenuOpen = () => {
+    //TODO: Implement menu opening
+    const handleMenuOpening = () => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{backgroundColor: 'white'}}>
             <Toolbar sx={{justifyContent: 'space-between'}}>
-                <IconButton aria-label="menu" onClick={() => handleMenuOpen()}>
+                <IconButton sx={{backgroundColor: '#1E164E0A'}} aria-label="menu" onClick={() => handleMenuOpening()}>
                     <MenuIcon/>
                 </IconButton>
                 <Logo style={{textAlign: 'center'}}/>
@@ -25,4 +26,4 @@ function MobileHeader() {
     );
 }
 
-export default MobileHeader;
+export default Header;

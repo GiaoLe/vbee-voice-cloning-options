@@ -1,14 +1,12 @@
 import './App.css';
 import * as React from 'react';
-import MobileHeader from "./MobileHeader";
+import Header from "./Header";
 import Body from "./Body";
-import YellowPlusButton from "./YellowPlusButton";
 
 function App() {
     return (<>
-            <MobileHeader/>
+            <Header/>
             <Body/>
-            <YellowPlusButton/>
         </>
     );
 }

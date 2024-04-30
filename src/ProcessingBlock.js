@@ -1,5 +1,6 @@
 import ProcessingVoiceItem from "./ProcessingVoiceItem";
 import {Box} from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 function ProcessingBlock() {
     //Fetch data from the server
@@ -21,7 +22,7 @@ function ProcessingBlock() {
         }
     ];
     return <>
-        <h1>Đang xử lý</h1>
+        <Typography sx={{fontWeight: 'bold', fontSize: '20px', margin: '20px 0 20px 0'}}>Đang xử lý</Typography>
         <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
             {data.map((item) => (
                 <ProcessingVoiceItem key={item.id} item={item}/>
