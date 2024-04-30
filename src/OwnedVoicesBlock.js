@@ -3,7 +3,7 @@ import * as React from "react";
 import MyVoiceItem from "./MyVoiceItem";
 import Typography from "@mui/material/Typography";
 
-function MyVoicesBlock() {
+function OwnedVoicesBlock() {
     const data = [{
         id: 1, name: 'A'
     }, {
@@ -22,4 +22,4 @@ function MyVoicesBlock() {
     </Box>;
 }
 
-export default MyVoicesBlock;
+export default OwnedVoicesBlock;

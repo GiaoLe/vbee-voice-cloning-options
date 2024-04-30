@@ -33,7 +33,8 @@ const VoicePlayer = () => {
 
     return (
         <Stack spacing={2} direction="row" justifyContent="center" alignItems="center"
-               sx={{padding: '10px 10px 0 10px'}}>
+               sx={{padding: '10px 10px 10px 10px',
+               backgroundColor: '#1E164E0A'}}>
             <IconButton sx={{borderRadius: '50%',
                 backgroundColor: '#FFD60A',
                 '&:hover': {
@@ -47,7 +48,7 @@ const VoicePlayer = () => {
                             sx={{flexGrow: 1,
                                 transition: 'none',
                                 height: '8px',
-                                backgroundColor: '#D0E1F9',
+                                backgroundColor: '#1E164E14',
                                 '.MuiLinearProgress-bar': { backgroundColor: '#FFD60A' }
             }}/>
         </Stack>

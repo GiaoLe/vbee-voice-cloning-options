@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import {Grid} from "@mui/material";
-import OptionsMenu from "./OptionsMenu";
+import MoreButton from "./MoreButton";
 import StyledBox from "./StyledBox";
 
 function VoiceInfoBox({item, isProcessing}) {
@@ -17,7 +17,7 @@ function VoiceInfoBox({item, isProcessing}) {
                 <Typography variant="body1">Review phim. Nam. 22 tuổi</Typography>
                 {isProcessing && <Typography variant="body1">{state}</Typography>}
             </Grid>
-            <OptionsMenu />
+            <MoreButton isProcessing={isProcessing}/>
         </StyledBox>
     );
 }

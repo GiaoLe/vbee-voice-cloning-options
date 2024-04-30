@@ -2,9 +2,11 @@ import * as React from 'react';
 import {useState} from 'react';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import VoiceInfoPopUp from "./VoiceInfoPopUp";
+import OwnedVoicePopUp from "./OwnedVoicePopUp";
+import ProcessingVoicePopUp from "./ProcessingVoicePopUp";
+import {Box} from "@mui/material";
 
-function OptionsMenu() {
+function MoreButton({isProcessing}) {
 
     const [open, setOpen] = useState(false);
 
@@ -13,7 +15,7 @@ function OptionsMenu() {
     }
 
     return (
-        <div>
+        <Box>
             <IconButton
                 aria-label="more"
                 aria-controls="options-menu"
@@ -22,9 +24,10 @@ function OptionsMenu() {
             >
                 <MoreVertIcon/>
             </IconButton>
-            <VoiceInfoPopUp open={open} setOpen={setOpen}/>
-        </div>
+            {isProcessing && <ProcessingVoicePopUp open={open} setOpen={setOpen}/>}
+            {!isProcessing && <OwnedVoicePopUp open={open} setOpen={setOpen}/>}
+        </Box>
     );
 }
 
-export default OptionsMenu;
+export default MoreButton;
