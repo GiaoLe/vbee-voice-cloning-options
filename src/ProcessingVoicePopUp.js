@@ -7,7 +7,7 @@ import Transition from "./Transition";
 import ChangeVoiceNamePopUp from "./ChangeVoiceNamePopUp";
 import DeleteVoicePopUp from "./DeleteVoicePopUp";
 
-function ProcessingVoicePopUp({open, setOpen, voice}) {
+function ProcessingVoicePopUp({open, setOpen, voiceItem}) {
     const [isChangeVoiceNamePopUpOpen, setChangeVoiceNamePopUpOpen] = useState(false);
     const [isDeleteVoicePopUpOpen, setDeleteVoicePopUpOpen] = useState(false);
 
@@ -39,7 +39,7 @@ function ProcessingVoicePopUp({open, setOpen, voice}) {
             }}/>
         </DialogContent>
         <ChangeVoiceNamePopUp open={isChangeVoiceNamePopUpOpen} setOpen={setChangeVoiceNamePopUpOpen}/>
-        <DeleteVoicePopUp open={isDeleteVoicePopUpOpen} setOpen={setDeleteVoicePopUpOpen} voice={voice}/>
+        <DeleteVoicePopUp open={isDeleteVoicePopUpOpen} setOpen={setDeleteVoicePopUpOpen} voiceItem={voiceItem}/>
     </Dialog>
 }
 

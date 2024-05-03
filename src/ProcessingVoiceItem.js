@@ -1,7 +1,7 @@
 import VoiceInfoBox from "./VoiceInfoBox";
 
-function ProcessingVoiceItem({item}) {
-    return <VoiceInfoBox item={item} isProcessing={true}/>
+function ProcessingVoiceItem({voiceItem}) {
+    return <VoiceInfoBox voiceItem={voiceItem} isProcessing={true}/>
 }
 
 export default ProcessingVoiceItem;

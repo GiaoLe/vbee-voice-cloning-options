@@ -7,25 +7,28 @@ function ProcessingVoicesBlock() {
     const data = [
         {
             id: 1,
-            name: 'A',
-            state: 'processing'
+            name: 'Tên giọng A',
+            state: 'processing',
+            region: 'HN'
         },
         {
             id: 2,
-            name: 'B',
-            state: 'processing'
+            name: 'Tên giọng B',
+            state: 'processing',
+            region: 'HN'
         },
         {
             id: 3,
-            name: 'C',
-            state: 'received'
+            name: 'Tên giọng C',
+            state: 'received',
+            region: 'SG'
         }
     ];
     return <>
         <Typography sx={{fontWeight: 'bold', fontSize: '20px', margin: '20px 0 20px 0'}}>Đang xử lý</Typography>
         <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
             {data.map((item) => (
-                <ProcessingVoiceCard key={item.id} item={item}/>
+                <ProcessingVoiceCard key={item.id} voiceItem={item}/>
             ))}
         </Box>
     </>;

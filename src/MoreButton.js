@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {useState} from 'react';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import OwnedVoicePopUp from "./OwnedVoicePopUp";
 import ProcessingVoicePopUp from "./ProcessingVoicePopUp";
 import {Box} from "@mui/material";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
-function MoreButton({isProcessing, voice}) {
+
+function MoreButton({isProcessing, voiceItem}) {
 
     const [open, setOpen] = useState(false);
 
@@ -22,10 +23,10 @@ function MoreButton({isProcessing, voice}) {
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-                <MoreVertIcon/>
+                <MoreHorizIcon/>
             </IconButton>
-            {isProcessing ? <ProcessingVoicePopUp open={open} setOpen={setOpen} voice={voice}/> :
-                <OwnedVoicePopUp open={open} setOpen={setOpen} voice={voice}/>}
+            {isProcessing ? <ProcessingVoicePopUp open={open} setOpen={setOpen} voiceItem={voiceItem}/> :
+                <OwnedVoicePopUp open={open} setOpen={setOpen} voiceItem={voiceItem}/>}
         </Box>
     );
 }

@@ -7,7 +7,7 @@ function CustomDialog({open, setOpen, title, dialogContent}) {
                    open={open} onClose={() => setOpen(false)}
                    PaperProps={{
                        style: {
-                           position: 'fixed', width: '90%', height: '30%', borderRadius: 24, backgroundColor: '#f5f5f5',
+                           position: 'fixed', width: '90%', borderRadius: 24, backgroundColor: '#f5f5f5',
                        },
                    }}>
         <DialogTitle align={"center"}>
