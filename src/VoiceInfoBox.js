@@ -17,7 +17,7 @@ function VoiceInfoBox({item, isProcessing}) {
                 <Typography variant="body1">Review phim. Nam. 22 tuổi</Typography>
                 {isProcessing && <Typography variant="body1">{state}</Typography>}
             </Grid>
-            <MoreButton isProcessing={isProcessing}/>
+            <MoreButton isProcessing={isProcessing} voice={item}/>
         </StyledBox>
     );
 }

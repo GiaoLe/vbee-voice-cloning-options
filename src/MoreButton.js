@@ -6,7 +6,7 @@ import OwnedVoicePopUp from "./OwnedVoicePopUp";
 import ProcessingVoicePopUp from "./ProcessingVoicePopUp";
 import {Box} from "@mui/material";
 
-function MoreButton({isProcessing}) {
+function MoreButton({isProcessing, voice}) {
 
     const [open, setOpen] = useState(false);
 
@@ -24,8 +24,8 @@ function MoreButton({isProcessing}) {
             >
                 <MoreVertIcon/>
             </IconButton>
-            {isProcessing && <ProcessingVoicePopUp open={open} setOpen={setOpen}/>}
-            {!isProcessing && <OwnedVoicePopUp open={open} setOpen={setOpen}/>}
+            {isProcessing ? <ProcessingVoicePopUp open={open} setOpen={setOpen} voice={voice}/> :
+                <OwnedVoicePopUp open={open} setOpen={setOpen} voice={voice}/>}
         </Box>
     );
 }

@@ -1,11 +1,19 @@
 import {Dialog, DialogContent} from "@mui/material";
-import React from "react";
+import React, {useState} from "react";
 import PopUpTitle from "./PopUpTitle";
 import PopUpButton from "./PopUpButton";
 import DeleteButton from "./DeleteButton";
 import Transition from "./Transition";
+import ChangeVoiceNamePopUp from "./ChangeVoiceNamePopUp";
+import DeleteVoicePopUp from "./DeleteVoicePopUp";
 
-function ProcessingVoicePopUp({open, setOpen}) {
+function ProcessingVoicePopUp({open, setOpen, voice}) {
+    const [isChangeVoiceNamePopUpOpen, setChangeVoiceNamePopUpOpen] = useState(false);
+    const [isDeleteVoicePopUpOpen, setDeleteVoicePopUpOpen] = useState(false);
+
+    const handleOpenChangeVoiceNamePopUp = () => {
+        setChangeVoiceNamePopUpOpen(true);
+    };
     return <Dialog open={open}
                    TransitionComponent={Transition}
                    fullScreen
@@ -25,9 +33,13 @@ function ProcessingVoicePopUp({open, setOpen}) {
         }} voice={{name: "Tên giọng", region: "SG"}}
         />
         <DialogContent>
-            <PopUpButton text={"Đổi tên giọng"} onClick={() => console.log("Edit")}/>
-            <DeleteButton/>
+            <PopUpButton text={"Đổi tên giọng"} onClick={handleOpenChangeVoiceNamePopUp}/>
+            <DeleteButton onClick={() => {
+                setDeleteVoicePopUpOpen(true);
+            }}/>
         </DialogContent>
+        <ChangeVoiceNamePopUp open={isChangeVoiceNamePopUpOpen} setOpen={setChangeVoiceNamePopUpOpen}/>
+        <DeleteVoicePopUp open={isDeleteVoicePopUpOpen} setOpen={setDeleteVoicePopUpOpen} voice={voice}/>
     </Dialog>
 }
 
