@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import {Card, Grid, Paper, Stack} from "@mui/material";
+import {Grid, Paper, Stack} from "@mui/material";
 import MoreButton from "./MoreButton";
 import StateBox from "./StateBox";
 
 function VoiceInfoBox({voiceItem, isProcessing}) {
     const {name, processed} = voiceItem;
-    return (
-        <Paper elevation={4} sx={{padding: '10px 0 10px 0', borderRadius: '15px'}}>
+    return (<Paper elevation={4} sx={{padding: '10px 0 10px 0', borderRadius: '15px'}}>
             <Grid container spacing={2} alignItems="center">
                 <Grid item xs={2}>
                     <img src="https://via.placeholder.com/30" alt="avatar"/>
@@ -23,8 +22,7 @@ function VoiceInfoBox({voiceItem, isProcessing}) {
                     <MoreButton isProcessing={isProcessing} voiceItem={voiceItem}/>
                 </Grid>
             </Grid>
-        </Paper>
-    );
+        </Paper>);
 }
 
 export default VoiceInfoBox;

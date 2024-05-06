@@ -11,6 +11,8 @@ import {useState} from "react";
 
 function PublishVoicePopUp({open, setOpen, voiceItem}) {
     const [openSnackBar, setOpenSnackBar] = useState(false);
+
+    //TODO: set the message if the voice is shared unsuccessfully
     const [snackBarMessage, setSnackBarMessage] = useState('Chia sẻ giọng lên thư viện thành công');
 
     return (<>
