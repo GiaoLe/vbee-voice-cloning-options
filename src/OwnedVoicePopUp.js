@@ -40,7 +40,7 @@ function OwnedVoicePopUp({open, setOpen, voiceItem}) {
                 <PopUpButton text={"Xuất bản"} onClick={() => {
                     setPublishVoicePopUpOpen(true);
                 }}/>
-                <PopUpButton text={"Sử dụng ngay"} onClick={() => console.log("Edit")}/>
+                <PopUpButton text={"Sử dụng ngay"} onClick={() => console.log("Sử dụng ngay là sao?")}/>
                 <PopUpButton text={"Đổi tên giọng"}
                              onClick={() => {
                                  setChangeVoiceNamePopUpOpen(true);

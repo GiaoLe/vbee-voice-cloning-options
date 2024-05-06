@@ -5,7 +5,7 @@ import Body from "./Body";
 import {Box} from "@mui/material";
 
 function App() {
-    return (<Box sx={{backgroundColor: '#DAEAFF', height: '100vh'}}>
+    return (<Box sx={{backgroundColor: '#FDFDFF', height: '100vh'}}>
             <Header/>
             <Body/>
         </Box>

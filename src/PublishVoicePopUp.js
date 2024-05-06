@@ -5,10 +5,16 @@ import OwnedVoiceItem from "./OwnedVoiceItem";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import ShareButton from "./ShareButton";
+import SharingStateSnackBar from "./SharingStateSnackBar";
+import {useState} from "react";
 
 
 function PublishVoicePopUp({open, setOpen, voiceItem}) {
-    return (<CustomDialog
+    const [openSnackBar, setOpenSnackBar] = useState(false);
+    const [snackBarMessage, setSnackBarMessage] = useState('Chia sẻ giọng lên thư viện thành công');
+
+    return (<>
+        <CustomDialog
             open={open}
             setOpen={setOpen}
             title={<Typography>
@@ -29,10 +35,13 @@ function PublishVoicePopUp({open, setOpen, voiceItem}) {
                     giọng công khai của Vbee, bất cứ ai cũng có
                     thể sử dụng giọng đọc.</Typography>
                 <ShareButton onClick={() => {
-                    console.log('Share voice');
+                    setOpenSnackBar(true);
+                    setOpen(false);
                 }}/>
             </Stack>}
-        />);
+        />
+        <SharingStateSnackBar setOpen={setOpenSnackBar} open={openSnackBar} message={snackBarMessage}/>
+    </>);
 }
 
 export default PublishVoicePopUp;

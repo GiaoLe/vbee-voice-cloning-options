@@ -8,19 +8,19 @@ function ProcessingVoicesBlock() {
         {
             id: 1,
             name: 'Tên giọng A',
-            state: 'processing',
+            processed: true,
             region: 'HN'
         },
         {
             id: 2,
             name: 'Tên giọng B',
-            state: 'processing',
+            processed: true,
             region: 'HN'
         },
         {
             id: 3,
             name: 'Tên giọng C',
-            state: 'received',
+            processed: false,
             region: 'SG'
         }
     ];

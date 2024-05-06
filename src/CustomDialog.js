@@ -9,7 +9,8 @@ function CustomDialog({open, setOpen, title, dialogContent}) {
                        style: {
                            position: 'fixed', width: '90%', borderRadius: 24, backgroundColor: '#f5f5f5',
                        },
-                   }}>
+                   }}
+                   >
         <DialogTitle align={"center"}>
             <Typography padding={0.5} variant="subtitle1">{title}</Typography>
         </DialogTitle>
