@@ -5,25 +5,28 @@ import PopUpButton from "./PopUpButton";
 import DeleteButton from "./DeleteButton";
 import PopUpTitle from "./PopUpTitle";
 import Transition from "./Transition";
-import ChangeVoiceNamePopUp from "./ChangeVoiceNamePopUp";
-import DeleteVoicePopUp from "./DeleteVoicePopUp";
-import PublishVoicePopUp from "./PublishVoicePopUp";
 
-function OwnedVoicePopUp({open, setOpen, setChangeVoiceNamePopUpOpen, setDeleteVoicePopUpOpen, setPublishVoicePopUpOpen, voiceItem}) {
+function OwnedVoicePopUp({
+                             open,
+                             setOpen,
+                             setChangeVoiceNamePopUpOpen,
+                             setDeleteVoicePopUpOpen,
+                             setPublishVoicePopUpOpen
+                         }) {
 
     const handleOpenChangeVoiceNamePopUp = () => {
-        setOpen(false); // close the current pop-up
-        setChangeVoiceNamePopUpOpen(true); // open the next pop-up
+        setOpen(false);
+        setChangeVoiceNamePopUpOpen(true);
     };
 
     const handleOpenDeleteVoicePopUp = () => {
-        setOpen(false); // close the current pop-up
-        setDeleteVoicePopUpOpen(true); // open the next pop-up
+        setOpen(false);
+        setDeleteVoicePopUpOpen(true);
     };
 
     const handleOpenPublishVoicePopUp = () => {
-        setOpen(false); // close the current pop-up
-        setPublishVoicePopUpOpen(true); // open the next pop-up
+        setOpen(false);
+        setPublishVoicePopUpOpen(true);
     };
 
     return (<Dialog
@@ -49,7 +52,7 @@ function OwnedVoicePopUp({open, setOpen, setChangeVoiceNamePopUpOpen, setDeleteV
         <DialogContent style={{backdropFilter: 'blur(5px)', padding: '16px'}}>
             <ButtonGroup orientation={"vertical"} fullWidth>
                 <PopUpButton text={"Xuất bản"} onClick={handleOpenPublishVoicePopUp}/>
-                <PopUpButton text={"Sử dụng ngay"} onClick={() => console.log("Sử dụng ngay là sao?")}/>
+                <PopUpButton text={"Sử dụng ngay"} onClick={() => console.log("Chưa biết nút này dùng làm gì")}/>
                 <PopUpButton text={"Đổi tên giọng"} onClick={handleOpenChangeVoiceNamePopUp}/>
             </ButtonGroup>
             <DeleteButton onClick={handleOpenDeleteVoicePopUp}/>

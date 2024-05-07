@@ -31,7 +31,7 @@ function ProcessingVoicePopUp({open, setOpen, voiceItem, setChangeVoiceNamePopUp
                    }}>
         <PopUpTitle handleClose={() => {
             setOpen(false);
-        }} voice={{name: "Tên giọng", region: "SG"}}
+        }} voiceItem={voiceItem}
         />
         <DialogContent>
             <PopUpButton text={"Đổi tên giọng"} onClick={handleOpenChangeVoiceNamePopUp}/>
