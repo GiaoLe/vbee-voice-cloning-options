@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {ButtonGroup, Dialog, DialogContent} from "@mui/material";
 import VoicePlayer from "./VoicePlayer";
 import PopUpButton from "./PopUpButton";
@@ -9,11 +9,22 @@ import ChangeVoiceNamePopUp from "./ChangeVoiceNamePopUp";
 import DeleteVoicePopUp from "./DeleteVoicePopUp";
 import PublishVoicePopUp from "./PublishVoicePopUp";
 
-function OwnedVoicePopUp({open, setOpen, voiceItem}) {
+function OwnedVoicePopUp({open, setOpen, setChangeVoiceNamePopUpOpen, setDeleteVoicePopUpOpen, setPublishVoicePopUpOpen, voiceItem}) {
 
-    const [isChangeVoiceNamePopUpOpen, setChangeVoiceNamePopUpOpen] = useState(false);
-    const [isDeleteVoicePopUpOpen, setDeleteVoicePopUpOpen] = useState(false);
-    const [isPublishVoicePopUpOpen, setPublishVoicePopUpOpen] = useState(false);
+    const handleOpenChangeVoiceNamePopUp = () => {
+        setOpen(false); // close the current pop-up
+        setChangeVoiceNamePopUpOpen(true); // open the next pop-up
+    };
+
+    const handleOpenDeleteVoicePopUp = () => {
+        setOpen(false); // close the current pop-up
+        setDeleteVoicePopUpOpen(true); // open the next pop-up
+    };
+
+    const handleOpenPublishVoicePopUp = () => {
+        setOpen(false); // close the current pop-up
+        setPublishVoicePopUpOpen(true); // open the next pop-up
+    };
 
     return (<Dialog
         open={open}
@@ -37,22 +48,12 @@ function OwnedVoicePopUp({open, setOpen, voiceItem}) {
         <VoicePlayer/>
         <DialogContent style={{backdropFilter: 'blur(5px)', padding: '16px'}}>
             <ButtonGroup orientation={"vertical"} fullWidth>
-                <PopUpButton text={"Xuất bản"} onClick={() => {
-                    setPublishVoicePopUpOpen(true);
-                }}/>
+                <PopUpButton text={"Xuất bản"} onClick={handleOpenPublishVoicePopUp}/>
                 <PopUpButton text={"Sử dụng ngay"} onClick={() => console.log("Sử dụng ngay là sao?")}/>
-                <PopUpButton text={"Đổi tên giọng"}
-                             onClick={() => {
-                                 setChangeVoiceNamePopUpOpen(true);
-                             }}/>
+                <PopUpButton text={"Đổi tên giọng"} onClick={handleOpenChangeVoiceNamePopUp}/>
             </ButtonGroup>
-            <DeleteButton onClick={() => {
-                setDeleteVoicePopUpOpen(true);
-            }}/>
+            <DeleteButton onClick={handleOpenDeleteVoicePopUp}/>
         </DialogContent>
-        <ChangeVoiceNamePopUp open={isChangeVoiceNamePopUpOpen} setOpen={setChangeVoiceNamePopUpOpen}/>
-        <DeleteVoicePopUp open={isDeleteVoicePopUpOpen} setOpen={setDeleteVoicePopUpOpen} voiceItem={voiceItem}/>
-        <PublishVoicePopUp open={isPublishVoicePopUpOpen} setOpen={setPublishVoicePopUpOpen} voiceItem={voiceItem}/>
     </Dialog>);
 }
 

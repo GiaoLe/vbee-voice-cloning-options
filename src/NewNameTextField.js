@@ -1,6 +1,6 @@
 import {TextField} from "@mui/material";
 
-function NameTextField() {
+function NewNameTextField() {
     return <TextField
         sx={{
             borderRadius: '30px', width: '100%', '.MuiOutlinedInput-input': {
@@ -15,4 +15,4 @@ function NameTextField() {
     </TextField>
 }
 
-export default NameTextField;
+export default NewNameTextField;

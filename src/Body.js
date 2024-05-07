@@ -7,7 +7,7 @@ import {Container, Divider} from "@mui/material";
 function Body() {
     return (<Container>
         <ProcessingVoicesBlock/>
-        <Divider sx={{borderColor: '#e3dfd5', borderWidth: '1px', margin: '20px'}}/>
+        <Divider sx={{borderColor: '#dfe0e5', borderWidth: '1px', margin: '20px'}}/>
         <OwnedVoicesBlock/>
         <AddVoiceButton/>
     </Container>);

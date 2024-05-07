@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {useState} from 'react';
 import IconButton from '@mui/material/IconButton';
-import OwnedVoicePopUp from "./OwnedVoicePopUp";
-import ProcessingVoicePopUp from "./ProcessingVoicePopUp";
 import {Box} from "@mui/material";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import OwnedVoicePopUpManager from "./OwnedVoicePopUpManager";
+import ProcessingVoicePopUpManager from "./ProcessingVoicePopUpManager";
 
 
 function MoreButton({isProcessing, voiceItem}) {
@@ -15,8 +15,7 @@ function MoreButton({isProcessing, voiceItem}) {
         setOpen(true);
     }
 
-    return (
-        <Box>
+    return (<Box>
             <IconButton
                 aria-label="more"
                 aria-controls="options-menu"
@@ -25,10 +24,9 @@ function MoreButton({isProcessing, voiceItem}) {
             >
                 <MoreHorizIcon/>
             </IconButton>
-            {isProcessing ? <ProcessingVoicePopUp open={open} setOpen={setOpen} voiceItem={voiceItem}/> :
-                <OwnedVoicePopUp open={open} setOpen={setOpen} voiceItem={voiceItem}/>}
-        </Box>
-    );
+            {isProcessing ? <ProcessingVoicePopUpManager open={open} setOpen={setOpen} voiceItem={voiceItem}/> :
+                <OwnedVoicePopUpManager open={open} setOpen={setOpen} voiceItem={voiceItem}/>}
+        </Box>);
 }
 
 export default MoreButton;
