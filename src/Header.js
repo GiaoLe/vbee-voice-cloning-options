@@ -14,7 +14,7 @@ function Header() {
     };
 
     return (
-        <AppBar position="static" sx={{backgroundColor: 'white'}}>
+        <AppBar position="fixed" sx={{backgroundColor: 'white'}}>
             <Toolbar sx={{justifyContent: 'space-between'}}>
                 <IconButton sx={{backgroundColor: '#1E164E0A'}} aria-label="menu" onClick={() => handleMenuOpening()}>
                     <MenuIcon/>

@@ -15,6 +15,7 @@ function ProcessingVoicePopUp({open, setOpen, voiceItem, setChangeVoiceNamePopUp
         setOpen(false);
         setDeleteVoicePopUpOpen(true);
     }
+
     return <Dialog open={open}
                    TransitionComponent={Transition}
                    fullScreen

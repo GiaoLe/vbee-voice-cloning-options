@@ -11,16 +11,13 @@ function MoreButton({isProcessing, voiceItem}) {
 
     const [open, setOpen] = useState(false);
 
-    const handleClick = () => {
-        setOpen(true);
-    }
 
     return (<Box>
             <IconButton
                 aria-label="more"
-                aria-controls="options-menu"
+                aria-controls="={handleClick}options-menu"
                 aria-haspopup="true"
-                onClick={handleClick}
+                onClick={() => setOpen(true)}
             >
                 <MoreHorizIcon/>
             </IconButton>

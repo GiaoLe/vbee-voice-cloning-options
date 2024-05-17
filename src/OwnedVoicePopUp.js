@@ -9,6 +9,7 @@ import Transition from "./Transition";
 function OwnedVoicePopUp({
                              open,
                              setOpen,
+                             voiceItem,
                              setChangeVoiceNamePopUpOpen,
                              setDeleteVoicePopUpOpen,
                              setPublishVoicePopUpOpen
@@ -29,6 +30,8 @@ function OwnedVoicePopUp({
         setPublishVoicePopUpOpen(true);
     };
 
+    console.log(voiceItem);
+
     return (<Dialog
         open={open}
         TransitionComponent={Transition}
@@ -47,7 +50,7 @@ function OwnedVoicePopUp({
     >
         <PopUpTitle handleClose={() => {
             setOpen(false);
-        }} voice={{name: "Tên giọng", region: "SG"}}/>
+        }} voiceItem={voiceItem}/>
         <VoicePlayer/>
         <DialogContent style={{backdropFilter: 'blur(5px)', padding: '16px'}}>
             <ButtonGroup orientation={"vertical"} fullWidth>

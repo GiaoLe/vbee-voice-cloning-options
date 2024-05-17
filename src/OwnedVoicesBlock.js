@@ -5,11 +5,11 @@ import Typography from "@mui/material/Typography";
 
 function OwnedVoicesBlock() {
     const data = [{
-        id: 1, name: 'A'
+        id: 1, name: 'Tên giọng A', region: 'HN'
     }, {
-        id: 2, name: 'B'
+        id: 2, name: 'Tên giọng B', region: 'HN'
     }, {
-        id: 3, name: 'C'
+        id: 3, name: 'Tên giọng C', region: 'SG'
     }];
     return <Box>
         <Typography sx={{fontWeight: 'bold', fontSize: '20px', margin: '20px 0 20px 0'}}>Giọng của tôi</Typography>

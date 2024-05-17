@@ -2,7 +2,7 @@ import {Snackbar, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {ReactComponent as Vector} from "./Vector.svg";
 
-function SharingStateSnackBar({open, setOpen, message}) {
+function CustomSnackBar({open, setOpen, message}) {
     return <Snackbar open={open}
                      autoHideDuration={3000}
                      onClose={() => setOpen(false)}
@@ -15,9 +15,13 @@ function SharingStateSnackBar({open, setOpen, message}) {
                          '& .MuiSnackbarContent-root': {
                              backgroundColor: '#34C759',
                              color: 'white',
-                         }
+                             width: '100%',
+                         },
+                         marginTop: '53px',
+                         fontSize: '14px',
+                         height: '48px',
                      }}
     />
 }
 
-export default SharingStateSnackBar;
+export default CustomSnackBar;

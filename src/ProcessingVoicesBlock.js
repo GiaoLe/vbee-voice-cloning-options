@@ -3,7 +3,7 @@ import {Box} from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 function ProcessingVoicesBlock() {
-    //Fetch data from the server
+    //TODO: Fetch data from the server
     const data = [
         {
             id: 1,

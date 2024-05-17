@@ -5,7 +5,7 @@ import OwnedVoiceItem from "./OwnedVoiceItem";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import ShareButton from "./ShareButton";
-import SharingStateSnackBar from "./SharingStateSnackBar";
+import CustomSnackBar from "./CustomSnackBar";
 import {useState} from "react";
 
 
@@ -13,7 +13,7 @@ function PublishVoicePopUp({open, setOpen, voiceItem}) {
     const [openSnackBar, setOpenSnackBar] = useState(false);
 
     //TODO: set the message if the voice is shared unsuccessfully
-    const [snackBarMessage, setSnackBarMessage] = useState('Chia sẻ giọng lên thư viện thành công');
+    const snackBarMessage = 'Chia sẻ giọng lên thư viện thành công';
 
     return (<>
         <CustomDialog
@@ -42,7 +42,7 @@ function PublishVoicePopUp({open, setOpen, voiceItem}) {
                 }}/>
             </Stack>}
         />
-        <SharingStateSnackBar setOpen={setOpenSnackBar} open={openSnackBar} message={snackBarMessage}/>
+        <CustomSnackBar setOpen={setOpenSnackBar} open={openSnackBar} message={snackBarMessage}/>
     </>);
 }
 

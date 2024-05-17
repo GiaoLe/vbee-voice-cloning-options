@@ -9,15 +9,17 @@ function OwnedVoicePopUpManager({open, setOpen, voiceItem}) {
     const [isDeleteVoicePopUpOpen, setDeleteVoicePopUpOpen] = useState(false);
     const [isPublishVoicePopUpOpen, setPublishVoicePopUpOpen] = useState(false);
 
-    return (
-        <>
-            <OwnedVoicePopUp open={open} setOpen={setOpen} setChangeVoiceNamePopUpOpen={setChangeVoiceNamePopUpOpen} setDeleteVoicePopUpOpen={setDeleteVoicePopUpOpen} setPublishVoicePopUpOpen={setPublishVoicePopUpOpen} />
+    return (<>
+            <OwnedVoicePopUp open={open} setOpen={setOpen} voiceItem={voiceItem}
+                             setChangeVoiceNamePopUpOpen={setChangeVoiceNamePopUpOpen}
+                             setDeleteVoicePopUpOpen={setDeleteVoicePopUpOpen}
+                             setPublishVoicePopUpOpen={setPublishVoicePopUpOpen}/>
             <PublishVoicePopUp open={isPublishVoicePopUpOpen} setOpen={setPublishVoicePopUpOpen} voiceItem={voiceItem}/>
             {/*TODO: Implement "Sử dụng ngay" button*/}
-            <ChangeVoiceNamePopUp open={isChangeVoiceNamePopUpOpen} setOpen={setChangeVoiceNamePopUpOpen} voiceItem={voiceItem}/>
+            <ChangeVoiceNamePopUp open={isChangeVoiceNamePopUpOpen} setOpen={setChangeVoiceNamePopUpOpen}
+                                  voiceItem={voiceItem}/>
             <DeleteVoicePopUp open={isDeleteVoicePopUpOpen} setOpen={setDeleteVoicePopUpOpen} voiceItem={voiceItem}/>
-        </>
-    );
+        </>);
 }
 
 export default OwnedVoicePopUpManager;
